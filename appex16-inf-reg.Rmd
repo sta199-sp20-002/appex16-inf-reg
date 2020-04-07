@@ -1,0 +1,65 @@
+---
+title: "AppEx 16: Inference for Regression"
+author: ""
+date: ""
+output: 
+  html_document:
+    toc: false
+    number_sections: false
+    df_print: paged
+---
+
+```{r set-up, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE,
+                      comment = "#>", highlight = TRUE,
+                      fig.align = "center")
+```
+
+
+## Packages and Data
+
+```{r packages}
+library(tidyverse)
+library(infer)
+library(broom)
+library(mosaicData)
+```
+
+The Pioneer Valley Planning Commission collected data in Florence, MA for 90 
+days from April 5 to November 15, 2005 using a laser sensor, with breaks in the 
+laser beam recording when a rail-trail user passed the data collection station.
+
+```{r load_data}
+data(RailTrail)
+```
+
+## Exercises
+
+### Exercise 1
+
+Consider a regression model with a response as `volume` and a single predictor
+of `avgtemp`. Create a 95% confidence interval for the population slope using
+a simulation-based inference approach and a CLT-based inference approach. Do
+your results agree and is the coefficient significantly different from 0?
+
+### Exercise 2
+
+Consider the population model
+
+$$\mbox{volume} = \beta_0 + \beta_1 \mbox{weekday} + \beta_2 \mbox{avgtemp} +
+\beta_3 \mbox{precip} + \epsilon$$
+
+Compute a 95% confidence interval for each population coefficient.
+
+### Exercise 3
+
+Using your fitted model from Exercise 2, check if the four linear model
+conditions are satisfied. If they are not, how does this impact your
+confidence intervals in Exercise 2?
+
+### Stage, commit and push
+
+1. Stage your modified files.
+2. Commit your changes with an informative message.
+3. Push your changes to your GitHub repo.
+4. Verify your files were updated on GitHub.
